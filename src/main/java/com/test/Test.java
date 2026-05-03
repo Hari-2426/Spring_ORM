@@ -16,15 +16,15 @@ public class Test {
 		StudentDao bean = ap.getBean("studentDao",StudentDao.class);
 		
 		//Inserting Data
-		bean.insertStudent();
+//		bean.insertStudent();
 		
 		//Finding Data
-		Student student = bean.getStudent(1000);
+		Student student = bean.getStudent(1001);
 		System.out.println(student);
 		
 		// Updating Data
-		Student updateStudent = bean.updateStudent(1000);
-		System.out.println(updateStudent);
+//		Student updateStudent = bean.updateStudent(1000);
+//		System.out.println(updateStudent);
 		
 	}
 

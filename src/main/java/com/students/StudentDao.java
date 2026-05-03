@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.college.College;
+
 @Component
 @Transactional
 public class StudentDao {
@@ -17,12 +19,17 @@ public class StudentDao {
 	{
 		Session s=sf.getCurrentSession();
 		Student stu=s.find(Student.class, id);
+		stu.getCollege().getCid();
+		stu.getCollege().getCname();
+		stu.getCollege().getCadd();
 		return stu;
 	}
 	public void insertStudent()
 	{
 		Session session=sf.getCurrentSession();
-		Student st1=new Student(1000,"Nandan",91);
+		College college=new College(800,"GPREC","Kurnool");
+		Student st1=new Student(1001,"Nandan",92,college);
+		session.persist(college);
 		session.persist(st1);
 		System.out.println("Data Inserted Successfully!!!!!");
 	}
